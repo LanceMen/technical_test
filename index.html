@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matching Game</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+    <body>
+        <section>
+        <div>
+            <div id="sv" class="area-information">
+
+                <div class="area-drop">
+                    <span class="droppable">
+                        <div class="drop-header"><p id="main">Which Team Member?</p></div>
+                        <img id="main-image"  class="profile" src="img/default.jpg" alt="profile outline">
+                    </span>
+                </div>
+                
+                <div class="infobox">
+                    <div class="job-info">
+                        <p>Priorities</p>
+                        <ul id="t1"></ul>
+                    </div>
+
+                    <div class="job-concerns">
+                        <p>Concerns & Challenges</p>
+                        <ul id="t2"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section>
+            <div class="draggable" draggable="true" id="directsupervisor">
+                <span>
+                    <p class="drag-header">Direct Supervisor</p>
+                    <img class="selectpic" src="img/dsv.png" alt="direct supervisor" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="coworker">
+                <span>
+                    <p class="drag-header">Co-worker</p>
+                    <img class="selectpic" src="img/cw.png" alt="co-worker" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="injured">
+                <span>
+                    <p class="drag-header">Injured / ill worker</p>
+                    <img class="selectpic" src="img/iw.png" alt="injured worker" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="physician">
+                <span>
+                    <p class="drag-header">Physician</p>
+                    <img class="selectpic" src="img/phy.png" alt="physician" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="unionrep">
+                <span>
+                    <p class="drag-header">Union Representative</p>
+                    <img class="selectpic" src="img/ur.png" alt="union reps" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="insurance">
+                <span>
+                    <p class="drag-header">Insurance Provider</p>
+                    <img class="selectpic" src="img/ip.png" alt="insurance provider" draggable="false">
+                </span>
+            </div>
+
+            <div class="draggable" draggable="true" id="disabilitycase">
+                <span>
+                    <p class="drag-header">Disability case / Management professional</p>
+                    <img class="selectpic" src="img/dc.png" alt="disability case" draggable="false">
+                </span>
+            </div>
+
+        </section>
+
+    </body>
+</html>
+
+<!--file:///D:/VisualStudio/technical_test/index.html-->
