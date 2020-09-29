@@ -1,3 +1,4 @@
+//Descriptions included in JSON format
 var data = [
     {
         "title": "Injured / ill worker",
@@ -173,7 +174,7 @@ function dropleave(event) {
     event.target.classList.remove("droppable-hover");
 }
 
-
+//update information at droppable area
 function updateData(id, img) {
     document.getElementById('main').innerHTML = id;
     document.getElementById('main-image').src = img;
@@ -183,11 +184,13 @@ function dropped(event) {
     event.preventDefault();
     const draggableElementData = event.dataTransfer.getData("text");
 
+    //search through JSON file to find the matching elements
     dataArray = data.find(i => {
         return i.name === draggableElementData
     });
     //console.log(dataArray)
 
+    //change content repectively at priorities and concerns area
     updateData(dataArray.title, dataArray.img);
     var ul = document.getElementById("t1");
     ul.innerHTML = "";
@@ -197,6 +200,7 @@ function dropped(event) {
 
     for (var i = 0; i < dataArray.priorities.length; i++) {
         
+        //appending list to priorities area
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(dataArray.priorities[i]));
         ul.appendChild(li);
@@ -204,6 +208,7 @@ function dropped(event) {
 
     for (var i = 0; i < dataArray.concerns.length; i++) {
         
+        //appending list to concerns area
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(dataArray.concerns[i]));
         ul2.appendChild(li);
