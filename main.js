@@ -164,6 +164,10 @@ droppableElements.forEach(elemdrop => {
 function dragStart(event) {
     event.target.style.opacity = .5;
     event.dataTransfer.setData("text", event.target.id);
+    //DataTransfer objects are used to expose the data that underlies a drag-and-drop operation.
+    //The data that underlies a drag-and-drop operation, known as the drag data store, consists of 
+    //an unordered list of items representing the dragged data, and some information used to generate the UI feedback during the drag.
+    //get the id attribute of dragged team member
 }
 
 function dragEnter(event) {
@@ -184,7 +188,7 @@ function dropped(event) {
     event.preventDefault();
     const draggableElementData = event.dataTransfer.getData("text");
 
-    //search through JSON file to find the matching elements
+    //search through JSON file to find the matching elements by "name" attribute
     dataArray = data.find(i => {
         return i.name === draggableElementData
     });
@@ -194,14 +198,18 @@ function dropped(event) {
     updateData(dataArray.title, dataArray.img);
     var ul = document.getElementById("t1");
     ul.innerHTML = "";
+    //clean up the previous selection
     var ul2 = document.getElementById("t2");
     ul2.innerHTML = "";
+    //clean up the previous selection
+
     //console.log(data.length);
 
     for (var i = 0; i < dataArray.priorities.length; i++) {
         
         //appending list to priorities area
         var li = document.createElement("li");
+        //creates HTML element "li"
         li.appendChild(document.createTextNode(dataArray.priorities[i]));
         ul.appendChild(li);
     }
@@ -210,6 +218,7 @@ function dropped(event) {
         
         //appending list to concerns area
         var li = document.createElement("li");
+        //creates HTML element "li"
         li.appendChild(document.createTextNode(dataArray.concerns[i]));
         ul2.appendChild(li);
     }
