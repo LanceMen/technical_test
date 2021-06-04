@@ -17,6 +17,9 @@ kind: StatefulSet
 metadata:
   name: mongo
 spec:
+  selector:
+    matchLabels:
+      role: mongo
   serviceName: "mongo"
   replicas: 1
   template:
